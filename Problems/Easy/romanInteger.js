@@ -9,12 +9,17 @@ var romanToInt = function (s) {
         M: 1000
     }
     const romanArr = s.split('').reverse();
-    const romanInS = {};
+    let lastValue = 0
     let intNumber = 0;
     for (let i = 0; i < romanArr.length; i++) {
-        if (romanArr[i] > )
+        if (romanAndNumber[romanArr[i]] >= lastValue) {
+            intNumber += romanAndNumber[romanArr[i]];
+        } else {
+            intNumber -= romanAndNumber[romanArr[i]];
+        }
+        lastValue = romanAndNumber[romanArr[i]];
     }
-    return { romanArr, intNumber };
+    return intNumber;
 };
 
 
