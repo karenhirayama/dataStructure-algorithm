@@ -1,11 +1,16 @@
-    var interpret = function (command) {
-        const r = command.replace('()', 'o').replace('(al)','al')
-        if (r.includes(')')) {
-            return interpret(r) 
-        } else {
-            return r
-        }
-    };
+var interpret = function (command) {
+    // With replaceAll withou using replace
+    const res = command.split('(al)').join('al').split('()').join('o')
+    return res
+
+    // With recursion
+    // const r = command.replace('()', 'o').replace('(al)','al')
+    // if (r.includes(')')) {
+    //     return interpret(r) 
+    // } else {
+    //     return r
+    // }
+};
 
 console.log(interpret('G()(al)'));
 // 'Goal'
